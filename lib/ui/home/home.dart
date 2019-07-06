@@ -8,17 +8,25 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Transactions"),),
+      appBar: AppBar(
+        title: Text("Transactions"),
+      ),
       body: BlocProvider(
         builder: (context) => TransactionsBloc(),
         child: Transactions(),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => {},
+        label: Text("Scan"),
       ),
     );
   }
 }
 
 class Transactions extends StatelessWidget {
-  const Transactions({Key key}) : super(key: key);
+  final List<String> items = ["Items", "Two", "Three"];
+
+  Transactions({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,29 +34,50 @@ class Transactions extends StatelessWidget {
       alignment: Alignment.center,
       child: BlocListener(
         bloc: BlocProvider.of<TransactionsBloc>(context),
-        listener: (context, state) {
+        listener: (context, state) {},
+        child: _listView(),
+      )
+    );
+  }
 
-        },
-        child: ListView(
-          children: <Widget>[
-            Container(
-              child: const Center(
-                child: Text("A"),
-              )
+  Widget _listView() {
+    return ListView.builder(
+      itemCount: items.length, // TODO: Item count
+      itemBuilder: (context, index) => _listViewItem(context, index),
+    );
+  }
+
+  Widget _listViewItem(BuildContext context, int index) {
+    return Card(child: _listViewItemContent(index));
+  }
+
+  Widget _listViewItemContent(int index) {
+    return ListTile(
+      contentPadding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+      title: Text("Invoice"),
+      subtitle: Row(
+        children: <Widget>[
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text("INV-20190202-1"),
+                Text("21 June 2019 13:47"),
+                Text("Payment method: Cash")
+              ],
             ),
-            Container(
-              child: const Center(
-                child: Text("B"),
-              )
-            ),
-            Container(
-              child: const Center(
-                child: Text("C"),
-              )
-            )
-          ],
-        ),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text("More >"),
+            ],
+          ),
+        ],
       ),
+      onTap: () {
+        print("Hello");
+      },
     );
   }
 }
