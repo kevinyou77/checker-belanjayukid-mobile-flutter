@@ -10,7 +10,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("TransactionsList"),
+        title: Text("Transactions List"),
       ),
       body: BlocProvider(
         builder: (context) => TransactionsListBloc(),

@@ -5,8 +5,13 @@ class TransactionDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("Hehe"),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Transaction Detail"),
+      ),
+      body: Container(
+        child: Text("Hehe"),
+      ),
     );
   }
 }
