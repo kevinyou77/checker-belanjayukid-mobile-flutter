@@ -29,6 +29,7 @@ dependencies:
   flutter_redux: ^0.5.3
   flutter_bloc: ^0.18.0
   equatable: ^0.2.6
+  path_provider: ^1.1.0
 
 dev_dependencies:
   flutter_test:
