@@ -1,4 +1,4 @@
-import 'package:belanjayuk_mobile_flutter/models/weather.dart';
+import 'package:belanjayuk_mobile_flutter/data_models/weather.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 

@@ -1,9 +1,8 @@
 import 'package:belanjayuk_mobile_flutter/ui/home/home.dart';
+import 'package:belanjayuk_mobile_flutter/ui/transactions/transactions_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:belanjayuk_mobile_flutter/bloc/bloc.dart';
-import 'package:belanjayuk_mobile_flutter/models/weather.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,7 +14,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Home(),
+        '/transaction_detail': (context) => TransactionDetail(),
+      },
     );
   }
 }

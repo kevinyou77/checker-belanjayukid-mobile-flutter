@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:belanjayuk_mobile_flutter/bloc/weather_state.dart';
-import 'package:belanjayuk_mobile_flutter/models/weather.dart';
+import 'package:belanjayuk_mobile_flutter/data_models/weather.dart';
 import 'package:bloc/bloc.dart';
 import './bloc.dart';
 
