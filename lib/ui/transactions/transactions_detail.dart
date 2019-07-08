@@ -10,7 +10,10 @@ class TransactionDetail extends StatelessWidget {
         title: Text("Transaction Detail"),
       ),
       body: Container(
-        child: Text("Hehe"),
+        child: Text(
+          "Hehe",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }

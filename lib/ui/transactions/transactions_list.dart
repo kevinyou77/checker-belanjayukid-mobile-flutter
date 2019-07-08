@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TransactionsList extends StatelessWidget {
-  final List<String> items = ["Items", "Two", "Three"];
+  final List<String> items = ["Items", "Two", "Three", "1", "xcertif", "adsf", "abcd", "efghijkl"];
 
   TransactionsList({Key key}) : super(key: key);
 
@@ -40,9 +40,26 @@ class TransactionsList extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text("INV-20190202-1"),
-                Text("21 June 2019 13:47"),
-                Text("Payment method: Cash")
+                Text(
+                  "INV-20190202-1",
+                   style: TextStyle(
+                     fontWeight: FontWeight.bold,
+                     color: Colors.amberAccent,
+                     fontSize: 18,
+                    ),
+                ),
+                Text(
+                  "21 June 2019 13:47",
+                  style: TextStyle(
+                    color: Colors.black87,
+                  ),
+                ),
+                Text(
+                  "Payment method: Cash",
+                  style: TextStyle(
+                    color: Colors.black87,
+                  ),
+                )
               ],
             ),
           ),
