@@ -26,47 +26,51 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      initialIndex: 0,
-      child: Scaffold(
-        body: NestedScrollView(
-          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-            return <Widget>[
-              new SliverAppBar(
-                title: new Text("Transactions"),
-                pinned: true,
-                floating: true,
-                forceElevated: innerBoxIsScrolled,
-                bottom: new TabBar(
-                  tabs: <Tab>[
-                    new Tab(text: "STATISTICS"),
-                    new Tab(text: "HISTORY"),
-                  ],
-                  controller: _tabController,
-                ),
-              )
-            ];
-          },
-          body: new TabBarView(
-            children: <Widget>[
-              BlocProvider(
-                builder: (context) => TransactionsListBloc(),
-                child: new TransactionsList()
+    return Scaffold(
+      body: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              actions: <Widget>[
+                IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/search");
+                  },
+                )
+              ],
+              title: Text("Transactions"),
+              pinned: true,
+              floating: true,
+              forceElevated: innerBoxIsScrolled,
+              bottom: TabBar(
+                tabs: <Tab>[
+                  Tab(text: "IN-PROGRESS"),
+                  Tab(text: "COMPLETED"),
+                ],
+                controller: _tabController,
               ),
-              new TransactionsList(),
-            ],
-            controller: _tabController,
-          ),
-           
-        // floatingActionButton: FloatingActionButton.extended(
-        //   onPressed: () => {},
-        //   label: Text("Scan"),
-        // ),
-      )
-    )
-  );
-}
+            ),
+          ];
+        },
+        body: TabBarView(
+          children: <Widget>[
+            BlocProvider(
+                builder: (context) => TransactionsListBloc(),
+                child: TransactionsList()),
+            BlocProvider(
+                builder: (context) => TransactionsListBloc(),
+                child: TransactionsList())
+          ],
+          controller: _tabController,
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => {},
+        child: Icon(Icons.photo_camera),
+      ),
+    );
+  }
 }
 // TabBarView(
 //           children: [
@@ -79,11 +83,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 //         ),
 
 // BlocProvider(
-          // builder: (context) => TransactionsListBloc(),
-          // child: TabBarView(
-          //     children: [
-          //       Icon(Icons.directions_car),
-          //       Icon(Icons.directions_transit),
-          //       Icon(Icons.directions_bike),
-          //     ],
-          //   ),
+// builder: (context) => TransactionsListBloc(),
+// child: TabBarView(
+//     children: [
+//       Icon(Icons.directions_car),
+//       Icon(Icons.directions_transit),
+//       Icon(Icons.directions_bike),
+//     ],
+//   ),

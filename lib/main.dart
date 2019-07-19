@@ -1,4 +1,5 @@
 import 'package:belanjayuk_mobile_flutter/ui/home/home.dart';
+import 'package:belanjayuk_mobile_flutter/ui/search/search.dart';
 import 'package:belanjayuk_mobile_flutter/ui/transactions/transactions_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => Home(),
         '/transaction_detail': (context) => TransactionDetail(),
+        '/search': (context) => Search()
       },
     );
   }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TransactionsList extends StatelessWidget {
-  final List<String> items = ["Items", "Two", "Three", "1", "xcertif", "adsf", "abcd", "efghijkl"];
+  final List<String> items = ["Items", "Two", "Three", "1", "xcertif", "adsf", "abcd", "efghijkl", "four", "five"];
 
   TransactionsList({Key key}) : super(key: key);
 
@@ -44,7 +44,7 @@ class TransactionsList extends StatelessWidget {
                   "INV-20190202-1",
                    style: TextStyle(
                      fontWeight: FontWeight.bold,
-                     color: Colors.amberAccent,
+                     color: Colors.blueAccent,
                      fontSize: 18,
                     ),
                 ),
