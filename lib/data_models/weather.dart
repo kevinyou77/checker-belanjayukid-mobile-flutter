@@ -9,5 +9,4 @@ class Weather extends Equatable {
     @required this.cityName,
     @required this.temperature,
   }) : super ([cityName, temperature]);
-
 }
