@@ -1,9 +1,10 @@
+import 'package:belanjayuk_mobile_flutter/constants/routes.dart';
 import 'package:belanjayuk_mobile_flutter/ui/home/home.dart';
 import 'package:belanjayuk_mobile_flutter/ui/search/search.dart';
+import 'package:belanjayuk_mobile_flutter/ui/splash_screen.dart';
 import 'package:belanjayuk_mobile_flutter/ui/transactions/transactions_detail.dart';
+import 'package:belanjayuk_mobile_flutter/ui/user/login.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:belanjayuk_mobile_flutter/bloc/bloc.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,11 +16,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
+      initialRoute: Routes.splashScreen,
       routes: {
-        '/': (context) => Home(),
-        '/transaction_detail': (context) => TransactionDetail(),
-        '/search': (context) => Search()
+        Routes.splashScreen: (context) => SplashScreen(),
+        Routes.login : (context) => Login(),
+        Routes.home: (context) => Home(),
+        Routes.transactionDetail: (context) => TransactionDetail(),
+        Routes.search: (context) => Search()
       },
     );
   }

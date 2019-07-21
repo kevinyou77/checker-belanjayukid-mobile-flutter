@@ -95,22 +95,3 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     }
   }
 }
-// TabBarView(
-//           children: [
-//             BlocProvider(
-//               builder: (context) => TransactionsListBloc(),
-//               child: TransactionsList()
-//             ),
-//             Icon(Icons.directions_transit),
-//           ],
-//         ),
-
-// BlocProvider(
-// builder: (context) => TransactionsListBloc(),
-// child: TabBarView(
-//     children: [
-//       Icon(Icons.directions_car),
-//       Icon(Icons.directions_transit),
-//       Icon(Icons.directions_bike),
-//     ],
-//   ),
