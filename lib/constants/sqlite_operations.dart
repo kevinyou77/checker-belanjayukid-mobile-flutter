@@ -19,4 +19,8 @@ class SQLLiteOperations {
   static final String updateTransaction = '''
 
   ''';
+  
+  static final String deleteTransaction = '''
+
+  ''';
 }

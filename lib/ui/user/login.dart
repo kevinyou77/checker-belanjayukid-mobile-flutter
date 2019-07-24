@@ -51,7 +51,9 @@ class _LoginState extends State<Login> {
                 width: double.infinity,
                 child: MaterialButton(
                   color: Colors.blue,
-                  onPressed: () => {},
+                  onPressed: () => {
+                    Navigator.pushReplacementNamed(context, Routes.home)
+                  },
                   child: Text(
                     "Login",
                     style: TextStyle(
