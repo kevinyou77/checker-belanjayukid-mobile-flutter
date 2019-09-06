@@ -1,4 +1,5 @@
 import 'package:belanjayuk_mobile_flutter/constants/routes.dart';
+import 'package:belanjayuk_mobile_flutter/sqlite/auth/auth_db_provider.dart';
 import 'package:belanjayuk_mobile_flutter/ui/home/home.dart';
 import 'package:belanjayuk_mobile_flutter/ui/search/search.dart';
 import 'package:belanjayuk_mobile_flutter/ui/splash_screen.dart';

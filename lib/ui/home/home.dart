@@ -1,13 +1,11 @@
 import 'dart:async';
 import 'package:belanjayuk_mobile_flutter/bloc/bloc.dart';
-import 'package:belanjayuk_mobile_flutter/data_models/github_repo.dart';
 import 'package:belanjayuk_mobile_flutter/providers/github_repo_provider.dart';
 import 'package:belanjayuk_mobile_flutter/ui/transactions/transactions_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/services.dart';
-import 'dart:developer';
 
 class Home extends StatefulWidget {
   Home({Key key}) : super(key: key);
@@ -18,12 +16,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   TabController _tabController;
   String barcode = "";
-  final GitHubRepoProvider gitHubRepo = GitHubRepoProvider();
 
   @override
   void initState() {
     super.initState();
-    this.getRepos();
     _tabController = new TabController(vsync: this, length: 2);
   }
 
@@ -100,12 +96,12 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     }
   }
 
-   void getRepos() async {
-    debugPrint('cupu');
-    await gitHubRepo.getCurrentUserRepos().then((res) {
-      debugPrint('hai');
-      debugPrint('data: $res');
-    });
-    debugPrint('data : anjeng');
-  }
+  //  void getRepos() async {
+  //   debugPrint('cupu');
+  //   await gitHubRepo.getCurrentUserRepos().then((res) {
+  //     debugPrint('hai');
+  //     debugPrint('data: $res');
+  //   });
+  //   debugPrint('data : anjeng');
+  // }
 }

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:belanjayuk_mobile_flutter/constants/constants.dart';
+import 'package:belanjayuk_mobile_flutter/sqlite/auth/auth_db_provider.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -11,7 +12,13 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   void navigationPage () {
-    Navigator.pushReplacementNamed(context, Routes.login);
+    AuthDBProvider.db.getAuthUser().then((res) {
+      var hasUser = res != null;
+      var goTo = hasUser ? Routes.home : Routes.login;
+
+      Navigator.pushReplacementNamed(context, goTo);
+    });
+    
   }
 
   startTime() async {

@@ -23,4 +23,12 @@ class SQLLiteOperations {
   static final String deleteTransaction = '''
 
   ''';
+
+  static final String createAuthUserTable = '''
+    CREATE TABLE auth_user (
+      username TEXT PRIMARY KEY,
+      roleName TEXT,
+      bearerToken TEXT
+    )
+  ''';
 }
