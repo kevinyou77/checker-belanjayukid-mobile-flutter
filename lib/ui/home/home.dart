@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:belanjayuk_mobile_flutter/bloc/bloc.dart';
-import 'package:belanjayuk_mobile_flutter/providers/github_repo_provider.dart';
 import 'package:belanjayuk_mobile_flutter/ui/transactions/transactions_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

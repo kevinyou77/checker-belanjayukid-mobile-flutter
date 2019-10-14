@@ -20,14 +20,6 @@ class _LoginState extends State<Login> {
     super.initState();
   }
 
-  bool validateLoginData () {
-    return true;
-  }
-
-  void navigateToHome () {
-    Navigator.pushReplacementNamed(context, Routes.home);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +30,14 @@ class _LoginState extends State<Login> {
         child: _loginForm()
       ),
     );
+  }
+
+  bool validateLoginData () {
+    return true;
+  }
+
+  void navigateToHome () {
+    Navigator.pushReplacementNamed(context, Routes.home);
   }
 
   void _login () async {
@@ -68,18 +68,18 @@ class _LoginState extends State<Login> {
       return Center(
         child: CircularProgressIndicator(),
       );
-    } else {
-      return MaterialButton(
-        color: Colors.blue,
-        onPressed: this._handleFormOnSubmit,
-        child: Text(
-          "Login",
-          style: TextStyle(
-            color: Colors.white
-          ),
-        ),
-      );
     }
+
+    return MaterialButton(
+      color: Colors.blue,
+      onPressed: this._handleFormOnSubmit,
+      child: Text(
+        "Login",
+        style: TextStyle(
+          color: Colors.white
+        ),
+      ),
+    );
   }
 
   Widget _loginForm () {

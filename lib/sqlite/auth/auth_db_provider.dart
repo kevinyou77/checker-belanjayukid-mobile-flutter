@@ -47,6 +47,7 @@ class AuthDBProvider {
 
   Future<int> createAuthUser (UserAuthModel user) async {
     final db = await database;
+    await db.rawDelete("DELETE * FROM auth_user");
     var result = await db.insert("auth_user", user.toJson());
     return result;
   }

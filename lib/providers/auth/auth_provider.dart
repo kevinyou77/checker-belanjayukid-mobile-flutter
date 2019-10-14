@@ -1,6 +1,3 @@
-
-
-import 'dart:io';
 import 'package:belanjayuk_mobile_flutter/data_models/user_auth_model.dart';
 import 'package:belanjayuk_mobile_flutter/network/graphql_client.dart';
 import 'package:belanjayuk_mobile_flutter/providers/auth/auth_mutations.dart';
@@ -9,8 +6,8 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 class AuthProvider {
   Future<UserAuthModel> login (String username, String password) {
     return getGraphQLClient()
-        .mutate(_login(username, password))
-        .then(_toUserAuthModel);
+          .mutate(_login(username, password))
+          .then(_toUserAuthModel);
   }
 
   MutationOptions _login(String username, String password) {
@@ -24,7 +21,6 @@ class AuthProvider {
   }
 
   UserAuthModel _toUserAuthModel(QueryResult mutationResult) {
-    print(mutationResult.data);
     if (mutationResult.hasErrors) {
       throw Exception();
     }

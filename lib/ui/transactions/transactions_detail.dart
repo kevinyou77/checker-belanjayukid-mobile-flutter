@@ -22,7 +22,8 @@ class TransactionDetail extends StatelessWidget {
             )
           ),
         ),
-      bottomNavigationBar: _bottomAppBar());
+      bottomNavigationBar: _bottomAppBar()
+    );
   }
 
   Widget _bottomAppBar() {
@@ -37,10 +38,11 @@ class TransactionDetail extends StatelessWidget {
             onPressed: () {},
           )),
           Expanded(
-              child: IconButton(
-            icon: Icon(Icons.check),
-            onPressed: () {},
-          )),
+            child: IconButton(
+              icon: Icon(Icons.check),
+              onPressed: () {},
+            )
+          ),
         ],
       ),
     );

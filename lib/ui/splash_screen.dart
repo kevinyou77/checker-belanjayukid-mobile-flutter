@@ -18,7 +18,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
       Navigator.pushReplacementNamed(context, goTo);
     });
-    
   }
 
   startTime() async {
